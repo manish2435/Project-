@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>School Webpage</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #16212c;
+            color: white;
+            padding-top: 56px;
+        }
+
+        img {
+            height: 100%;
+            width: 100%;
+            border: 1px solid black;
+            border-top-right-radius: 15px;
+            border-top-left-radius: 15px;
+        }
+
+        .hero {
+
+            background: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT8ajAgbwbYSRZbFSugquy_qC6gWerNdD2x9Q&s') no-repeat center center;
+            background-size: cover;
+            color: aqua;
+            height: 600px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background-position: center;
+            transition: transform 0.3s ease-in-out
+        }
+
+        .hero:hover {
+            background: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT8ajAgbwbYSRZbFSugquy_qC6gWerNdD2x9Q&s') no-repeat center center;
+            background-size: cover;
+            color: aqua;
+            height: 600px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background-position: center;
+            transform: scale(1.2);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+
+
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 2em;
+        }
+
+        .typing-container {
+            background-color: #16212c;
+            white-space: nowrap;
+            overflow: hidden;
+            border-bottom-left-radius: 15px;
+            border-bottom-right-radius: 15px;
+        }
+
+        .typing-text {
+            display: inline;
+        }
+
+        .hero h1 {
+            font-size: 4em;
+            font-weight: bold;
+        }
+
+        .hero p {
+            font-size: 1.5em;
+        }
+
+        .section-title {
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        .section-title h2 {
+            font-size: 2.5em;
+            font-weight: bold;
+        }
+
+        .academic-programs .card,
+        .teachers .card {
+            margin-bottom: 20px;
+        }
+
+        .event-item {
+            margin-bottom: 20px;
+        }
+
+        .contact-form {
+            margin-top: 40px;
+        }
+
+        #science {
+            border: 1px solid rgba(0, 0, 0, 0);
+            cursor: pointer;
+            transition: transform 0.3s ease-in-out
+        }
+
+        #science:hover {
+            background-color: #1a4570;
+            text-transform: capitalize;
+            transform: scale(1.2);
+            /* Example hover effect */
+        }
+
+        #math {
+            border: 1px solid rgba(0, 0, 0, 0);
+            cursor: pointer;
+            transition: transform 0.3s ease-in-out
+        }
+
+        #math:hover {
+            background-color: #1a4570;
+            text-transform: capitalize;
+            transform: scale(1.2);
+            /* Example hover effect */
+        }
+
+        #art {
+            border: 1px solid rgba(0, 0, 0, 0);
+            cursor: pointer;
+            transition: transform 0.3s ease-in-out
+        }
+
+        #art:hover {
+            background-color: #1a4570;
+            text-transform: capitalize;
+            transform: scale(1.2);
+            /* Example hover effect */
+        }
+
+        #teachers {
+            border: 1px solid black;
+            cursor: pointer;
+            transition: transform 0.3s ease-in-out
+        }
+
+        #teachers:hover {
+            background-color: #1663af;
+            color: white;
+            transform: scale(1.2);
+            /* Example hover effect */
+        }
+
+
+        /* Basic styling for demonstration */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th,
+        td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+            color: #000;
+        }
+
+        /* img {
+        max-width: 50px;
+        max-height: 50px;
+        border-radius: 50%;
+    } */
+        input[type="text"] {
+            padding: 5px;
+            width: 100%;
+        }
+
+
+
+        /* CSS */
+        .footer {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .social-icons {
+            margin-top: 10px;
+        }
+
+        .social-icon {
+            display: inline-block;
+            margin: 0 10px;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .social-icon img {
+            width: 30px;
+            /* Adjust size as needed */
+            height: auto;
+        }
+
+        .social-icon:hover {
+            transform: scale(1.2);
+            /* Example hover effect */
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+
+        <a class="navbar-brand" href="#">S.V.M. School Bherunda</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#home">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#about">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#programs">Programs</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#managment">Managment</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#tech">Teachers</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#events">Events</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#contact">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div id="home" class="hero">
+        <div>
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT8ajAgbwbYSRZbFSugquy_qC6gWerNdD2x9Q&s"
+                alt="school image">
+            <!-- <h1>Welcome to Our School</h1>
+        <p>Where Learning Begins</p> -->
+            <div class="typing-container">
+                <span class="typing-text" id="typing-text"></span>
+            </div>
+        </div>
+    </div>
+
+    <!-- About Section -->
+    <div id="about" class="container my-5">
+        <div class="section-title">
+            <h2>About Us</h2>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1rrtFu0dbKU008crXsyxjfAa0wy1XDXrmKQ&s"
+                    class="img-fluid" alt="About Image">
+            </div>
+            <div class="col-md-6">
+                <p>Our school is committed to providing quality education to students and fostering an environment where
+                    they can grow and excel. We offer a wide range of programs and extracurricular activities to support
+                    the holistic development of our students.</p>
+                <p>Our dedicated faculty and staff are passionate about education and strive to create a nurturing and
+                    inclusive community for all students.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Academic Programs Section -->
+    <div id="programs" class="container my-5">
+        <div class="section-title">
+            <h2>Academic Programs</h2>
+        </div>
+        <div class="row academic-programs">
+            <div class="col-md-4">
+                <div class="card" id="science">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRkCRxZ4lvBM0SXlli4XbAjz7YR4Y48heYEEQ&s"
+                        class="card-img-top" alt="Program Image">
+                    <div class="card-body">
+                        <h5 class="card-title" id="science" style="color: rgb(0, 0, 85); text-align: center;">Science
+                        </h5>
+                        <p class="card-text" id="science" style="color: rgb(0, 0, 85); text-align: center;">Our science
+                            program encourages students to explore the wonders of the natural world and develop critical
+                            thinking skills.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card" id="math">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-3MThze8ppGMn4smX5TWDBFRvSCEqfYBEcw&s"
+                        class="card-img-top" alt="Program Image">
+                    <div class="card-body">
+                        <h5 class="card-title" style="color: rgb(0, 0, 85); text-align: center;">Mathematics</h5>
+                        <p class="card-text" style="color: rgb(0, 0, 85); text-align: center;">Our mathematics program
+                            helps students develop problem-solving abilities and a strong foundation in mathematical
+                            concepts.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card" id="art">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ-ZNH3IpSU0rcMbvT_Iok_Feolem7v4yehGA&s"
+                        class="card-img-top" alt="Program Image">
+                    <div class="card-body">
+                        <h5 class="card-title" style="color: rgb(0, 0, 85); text-align: center;">Arts</h5>
+                        <p class="card-text" style="color: rgb(0, 0, 85); text-align: center;">Our arts program fosters
+                            creativity and self-expression through various forms of visual and performing arts.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- Managment Section -->
+    <div class="container my-5" id="managment">
+        <div class="section-title">
+            <h2>Our MANAGEMENT </h2>
+        </div>
+        <div class="row teachers">
+            <div class="col-md-4">
+                <div class="card" id="teachers">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ0e-9L-OuQW5Dqfbaqlpl84ptS0VWZbY1K_A&s"
+                        class="card-img-top" alt="Teacher Image">
+                    <div class="card-body">
+                        <h5 class="card-title" style="color: rgb(0, 0, 85); text-align: center;">Mr.Dashrath singh</h5>
+                        <p class="card-text" style="color: rgb(0, 0, 85); text-align: center;">Director</p>
+                        <p class="card-text" style="color: rgb(0, 0, 85); text-align: center;">Mr. Dashrath Singh has a
+                            Master's degree in English literature and handdling our school for over 5 years with the
+                            experience of 2 years in Master deg. .</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card" id="teachers">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ0e-9L-OuQW5Dqfbaqlpl84ptS0VWZbY1K_A&s"
+                        class="card-img-top" alt="Teacher Image">
+                    <div class="card-body">
+                        <h5 class="card-title" style="color: rgb(0, 0, 85); text-align: center;">Mr. Yatandar Singh<h5>
+                                <p class="card-text" style="color: rgb(0, 0, 85); text-align: center;">Managment</p>
+                                <p class="card-text" style="color: rgb(0, 0, 85); text-align: center;">Mr. Yatandar
+                                    Singh has a MA degree in HINDI and NCC full experience for 10year's .</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card" id="teachers">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ0e-9L-OuQW5Dqfbaqlpl84ptS0VWZbY1K_A&s"
+                        class="card-img-top" alt="Teacher Image">
+                    <div class="card-body">
+                        <h5 class="card-title" style="color: rgb(0, 0, 85); text-align: center;">Mr. Vikram Singh</h5>
+                        <p class="card-text" style="color: rgb(0, 0, 85); text-align: center;">Principal</p>
+                        <p class="card-text" style="color: rgb(0, 0, 85); text-align: center;">Mr. Vikram Singh has a
+                            Bachelor's degree in Fine Arts and has been teaching for 25 years. He is dedicated to
+                            nurturing creativity and self-expression in his students.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- TEACHERS Section -->
+    <div id="tech">
+        <h2 style="color: rgb(255, 255, 255); text-align: center;">Our TEACHERS</h2>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Teacher's Name</th>
+                    <th>Subject</th>
+                    <th>Experience</th>
+                </tr>
+            </thead>
+            <tbody id="teacherList">
+                <tr>
+                    <td>
+
+                        <span>Mr. Subham Sarda</span>
+                    </td>
+                    <td>Mathematics</td>
+                    <td>5 years</td>
+                </tr>
+                <tr>
+                    <td>
+
+                        <span>Ms. Aayeaha </span>
+                    </td>
+                    <td>Science</td>
+                    <td>5 years</td>
+                </tr>
+                <tr>
+                    <td>
+
+                        <span>Mr. Gopal kumawat</span>
+                    </td>
+                    <td>History</td>
+                    <td>15 years</td>
+                </tr>
+
+                <tr>
+                    <td>
+
+                        <span>Mr. Gopal Singh</span>
+                    </td>
+                    <td>Physics/Math</td>
+                    <td>5 years</td>
+                </tr>
+
+                <tr>
+                    <td>
+
+                        <span>Ms. Anuradha Jangid</span>
+                    </td>
+                    <td>Biology/Chemistry</td>
+                    <td>5 years</td>
+                </tr>
+
+                <tr>
+                    <td>
+
+                        <span>Mr. Sunda Ram</span>
+                    </td>
+                    <td>English</td>
+                    <td>10 years</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3 style="color: rgb(255, 255, 255); text-align: center;">Add New Teacher</h3>
+        <div>
+            <input type="text" id="teacherName" placeholder="Teacher's Name">
+            <input type="text" id="teacherSubject" placeholder="Subject">
+            <input type="text" id="teacherExperience" placeholder="Experience">
+            <button onclick="addTeacher()">Add Teacher</button>
+        </div>
+
+    </div>
+
+    <!-- Events Section -->
+    <div id="events" class="container my-5">
+        <div class="section-title">
+            <h2>Upcoming Events</h2>
+        </div>
+        <div class="event-item">
+            <h4>Science Fair</h4>
+            <p>Date: July 15, 2024</p>
+            <p>Join us for our annual Science Fair where students showcase their projects and experiments.</p>
+        </div>
+        <div class="event-item">
+            <h4>Art Exhibition</h4>
+            <p>Date: August 10, 2024</p>
+            <p>Come and enjoy the creative artworks by our talented students at the Art Exhibition.</p>
+        </div>
+        <div class="event-item">
+            <h4>Math Olympiad</h4>
+            <p>Date: September 5, 2024</p>
+            <p>Participate in our Math Olympiad and challenge your mathematical skills.</p>
+        </div>
+    </div>
+
+
+    <!-- Contact Section -->
+    <div id="contact" class="container my-5">
+        <div class="section-title">
+            <h2>Contact Us</h2>
+        </div>
+        <form class="contact-form">
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="inputName">Name</label>
+                    <input type="text" class="form-control" id="inputName" placeholder="Your Name">
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="inputEmail">Email</label>
+                    <input type="email" class="form-control" id="inputEmail" placeholder="Your Email">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="inputMessage">Message</label>
+                <textarea class="form-control" id="inputMessage" rows="4" placeholder="Your Message"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Send Message</button>
+        </form>
+    </div>
+
+    <footer style="background-color: rgb(0, 0, 85); text-align: center;">
+        <div>
+            <h1>S.V.M.School Bherunda @ 2024</h1>
+            <div class="social-icons">
+                <a href="https://facebook.com/" target="_blank" class="social-icon"><img
+                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSbUGm5shrYTR9tShhgETaIbBWv_PAZC_Nj-w&s"
+                        alt="Facebook"></a>
+                <a href="https://twitter.com/" target="_blank" class="social-icon"><img
+                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRI5fcCHxfCZ3-hsWw7bG-dPwkXmTJBH3Ta3g&s"
+                        alt="Twitter"></a>
+                <a href="https://instagram.com/" target="_blank" class="social-icon"><img
+                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRztpszGhPb62Z5JpOmYShRE5RYE1nL6_11Yw&s"
+                        alt="Instagram"></a>
+                <a href="https://www.whatsapp.com/" target="_blank" class="social-icon"><img
+                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR078qCDKj-FZGkzSgYbx3xeLF3p3RRQkvHsw&s"
+                        alt="Whatsapp"></a>
+                <!-- Add more social media icons as needed -->
+
+            </div>
+            <p class="copyright">
+                &copy; 2024 S.V.M. School All rights reserved.
+            </p>
+            <h3>
+                call on :-
+                +91 7297927373</h3>
+        </div>
+    </footer>
+    <!-- Bootstrap and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+
+
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const textElement = document.getElementById('typing-text');
+            const textArray = ["Welcome to Our School ", "Where Learning Begins!", "S.V.M. School Bherunda"];
+            const typingSpeed = 100; // Speed of typing
+            const delayBetweenTexts = 1500; // Delay between different texts
+
+            let textIndex = 0;
+            let charIndex = 0;
+
+            function typeText() {
+                if (charIndex < textArray[textIndex].length) {
+                    textElement.innerHTML += textArray[textIndex].charAt(charIndex);
+                    charIndex++;
+                    setTimeout(typeText, typingSpeed);
+                } else {
+                    setTimeout(eraseText, delayBetweenTexts);
+                }
+            }
+
+            function eraseText() {
+                if (charIndex > 0) {
+                    textElement.innerHTML = textArray[textIndex].substring(0, charIndex - 1);
+                    charIndex--;
+                    setTimeout(eraseText, typingSpeed);
+                } else {
+                    textIndex = (textIndex + 1) % textArray.length;
+                    setTimeout(typeText, typingSpeed);
+                }
+            }
+
+            typeText();
+        });
+
+        function addTeacher() {
+            // Get input field values
+            var name = document.getElementById("teacherName").value;
+            var subject = document.getElementById("teacherSubject").value;
+            var experience = document.getElementById("teacherExperience").value;
+
+            // Clear input fields
+            document.getElementById("teacherName").value = "";
+            document.getElementById("teacherSubject").value = "";
+            document.getElementById("teacherExperience").value = "";
+
+            // Create new table row
+            var table = document.getElementById("teacherList");
+            var newRow = table.insertRow();
+
+            // Insert cells into new row
+            var cell1 = newRow.insertCell(0);
+            var cell2 = newRow.insertCell(1);
+            var cell3 = newRow.insertCell(2);
+
+            // Build HTML for new row
+            cell1.innerHTML = `
+        
+            <span>${name}</span>
+        `;
+            cell2.textContent = subject;
+            cell3.textContent = experience;
+        }</script>
+
+</body>
+
+</html>
